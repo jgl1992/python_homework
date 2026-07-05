@@ -1,46 +1,54 @@
 def hello():
     return "Hello!"
 def greet(name):
-    return f"Hello, {name}!"
-def calc(a, b, operation="multiply"):
+    return "Hello," + name + "!"
+def calc(num1, num2, operation="multiply"):
     try:
-        match operation:
-            case "add":
-                return a + b
-            case "subtract":
-                return a - b
-            case "multiply":
-                return a * b
-            case "divide":
-                return a / b
-            case "modulo":
-                return a % b
-            case "int_divide":
-                return a // b
-            case "power":
-                return a ** b
-            case _:
-                return "Unknown operation!"
-    except ZeroDivisionError:
-        return "You can't divide by 0!"
-    except TypeError:
-        return "You can't multiply those values!"
-def data_type_conversion(value, data_type):
+        if operation == "add": 
+            result = num1 + num2
+            return result
+        elif operation =="subtract":
+            result = num1 - num2
+            return result
+        elif operation == "multiply"
+            result = num1 * num2
+            return result
+        elif operation == "divide":
+                if num2 == 0:
+                    return "You can't divide by 0!"
+                result = num1/num2
+                return result
+        elif operation = "int_divide":
+            if num2 ==0:
+                return "You can't divide by 0!"
+            return num1 // num2
+        elif operation == "power":
+                return num1 ** num2
+                return result
+        else:
+             result = num1 * num2
+             return result
+    except: 
+         message = "You can't" + operation + "those values!"
+         return message
+   
+def test_data_type_conversion(value, target_type):
     try:
-        match data_type:
-            case "int":
-                return int(value)
-            case "float":
-                return float(value)
-            case "str":
-                return str(value)
-            case _:
-                return "Unknown data type requested."
-    except (ValueError, TypeError):
-        return f"You can't convert {value} into a {data_type}."
+         if target_type == "int":
+            converted_value = int(Value)
+            return converted_value
+         elif target_type == "float":
+              converted_value = float(value)
+              return converted_value
+         elif target_type =="str":
+              converted_value = str(value)
+              return converted_value
+    except:
+        error_message = "You can't convert" + str(value) + " into a" + target_type + "."\
+        return error_message
 def grade(*args):
-    try: scores = [float(x) for x in args]
-avg = sum(scores) / len(scores)
+    try: 
+        avg = sum(args) / len(args)
         if avg >= 90:
             return "A"
         elif avg >= 80:
@@ -52,79 +60,79 @@ avg = sum(scores) / len(scores)
         else:
             return "F"
 def repeat(string, count)
-    for (count<5, i++)
-    return(string)
-else return string*count
-def student_score(*args, **kwargs)
-for key, value kwargs.item()
-for key, value in kwargs.items():
-score = sum(scores)
-if avg >= 90:
-return A
-elif avg >=80:
-return B
-elif avg >=70:
-return C
-elif avg >=60:
-returnD
-else
-return F 
-
-The arbitrary list of keyword arguments uses the names of students as the keywords and their test score as the value for each.
-
-def titleize(s):
-    little_words = {"a", "on", "an", "the", "of", "and", "is", "in"}
-words = s.split()
-    if not words:
-        return ""
-
-    result = []
-    for i, word in enumerate(words):
-        # First or last word → always capitalize
-        if i == 0 or i == len(words) - 1:
-            result.append(word.capitalize())
+    result = ""
+    for i in range(count):
+        result = result + string
+    return result
+def student_scores(operation, *args, **kwargs):
+    if operation =="mean":
+        total = 0
+        count = 0
+        for key, value in kwargs.items():
+            total += value
+            count +=1
+            average = total/count
+            return average
+    elif operation =="best":
+        best_student = ""
+        highest_score = 0
+        for key, value in kwargs.items():
+            if value > highest_score:
+                highest_score = value
+                best_student = key
+            return best_student
+def titleize(text):
+    little_words = [a", "an", "the", "and", "of", "or", "is", "in"]
+    words = text.split()
+    result_words = []
+    for i in range(len(words)):
+        word = words[i]
+    #First or last -> always cap
+    if i == 0 or i = len(words) -1:
+        first_letter = word[0].upper()
+        rest_of_word = word[1:].lower()
+        titled_word = first_letter + rest_of_word
+        result_words.append(titled_word)
         else:
-            # Middle words → capitalize unless they are little words
-            if word in little_words:
-                result.append(word)
+            #Mid word -> cap unless little
+            titled_word = word.lower()
+            result_words.append(titled_word)
+            result = " ".join(result_words)
+            return result
+                assert.append(word)
             else:
                 result.append(word.capitalize())
-
     return " ".join(result)	
-    little_words = {"a", "on", "an", "the", "of", "and", "is", "in"}
-words = text.split()
-    if len(words) == 1:
-        return words[0].capitalize()
-
-    result = []
-    for i, word in enumerate(words):
-        # First word → always capitalize
-        if i == 0:
-            result.append(word.capitalize())
-            continue
-        if i == len(words) - 1:
-            result.append(word.capitalize())
-            continue
-10. def pig_latin(sentence):
-    vowels = "aeiou"
+    #words capitalize
+    return result
+def hangman(secret, guess):
+    result = ""
+     for letter in word:
+            if letter in guess:
+                 result = result _ letter
+            else:
+                 result = result + "_"__annotations__
+            return result  
+def pig_latin(sentence):
     words = sentence.split()
     result = []
     for word in words:
-        if word[0] in vowels:
+    word = word.lower()
+        if word[0] in "aeiou":
             result.append(word + "ay")
             continue
         if word.startswith("qu"):
             result.append(word[2:] + "quay")
             continue
-        index = 0
-        while index < len(word) and word[index] not in vowels:
-# treat "qu" as one consonant inside a cluster
-            if word[index:index+2] == "qu":
-                index += 2
-            else:
-                index += 1
-
-        result.append(word[index:] + word[:index] + "ay")
-
-
-# Write your code here.
+        vowel_index = -1
+        for i, ch in enumerate(word):
+            if ch in "aeiou":
+                vowel_index = i
+                break
+        if vowel_index == -1:
+            result.append(word + "ay")
+        else:
+            consonants = word[:vowel_index]
+            rest = word[vowel_index:]
+            result.append(rest + consonants + "ay")
+    return " ".join(result)
