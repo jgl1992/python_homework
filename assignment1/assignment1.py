@@ -1,4 +1,3 @@
-#j
 def hello():
     return "Hello!"
 def greet(name):
