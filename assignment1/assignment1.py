@@ -1,11 +1,10 @@
-
-1)def hello():
+def hello():
     return "Hello!"
-2) def greet(name):
-return f"Hello, {name}!"
-3) def calc(a, b, operation="multiply"):
-try:
-match operation:
+def greet(name):
+    return f"Hello, {name}!"
+def calc(a, b, operation="multiply"):
+    try:
+        match operation:
             case "add":
                 return a + b
             case "subtract":
@@ -26,7 +25,7 @@ match operation:
         return "You can't divide by 0!"
     except TypeError:
         return "You can't multiply those values!"
-4. def data_type_conversion(value, data_type):
+def data_type_conversion(value, data_type):
     try:
         match data_type:
             case "int":
@@ -39,18 +38,9 @@ match operation:
                 return "Unknown data type requested."
     except (ValueError, TypeError):
         return f"You can't convert {value} into a {data_type}."
-  return int(value)
-            case "float":
-                return float(value)
-            case "str":
-                return str(value)
-            case _:
-                return "Unknown data type requested."
-    except (ValueError, TypeError):
-        return f"You can't convert {value} into a {data_type}
-5. def grade(*args):
+def grade(*args):
     try: scores = [float(x) for x in args]
-        avg = sum(scores) / len(scores)
+avg = sum(scores) / len(scores)
         if avg >= 90:
             return "A"
         elif avg >= 80:
@@ -61,12 +51,23 @@ match operation:
             return "D"
         else:
             return "F"
+def student_score(position, **kwargs):
+    scores = kwargs.values()
 
-6. Function repeat(string, count)
-for (count<5, i++)
-return(string)
+    if position == "best":
+        return max(scores)
+
+    elif position == "mean":
+        return sum(scores) / len(scores)
+
+    else:
+        return "Invalid position requested."
+
+def repeat(string, count)
+    for (count<5, i++)
+    return(string)
 else return string*count
-7. Def student_score(*args, **kwargs)
+def student_score(*args, **kwargs)
 for key, value kwargs.item()
 for key, value in kwargs.items():
 score = sum(scores)
@@ -80,10 +81,7 @@ elif avg >=60:
 returnD
 else
 return F 
-
-The arbitrary list of keyword arguments uses the names of students as the keywords and their test score as the value for each.
-
-8. def titleize(s):
+def titleize(s):
     little_words = {"a", "on", "an", "the", "of", "and", "is", "in"}
 words = s.split()
     if not words:
