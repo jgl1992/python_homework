@@ -89,7 +89,8 @@ def student_scores(*args, **kwargs):
 
 def titleize(s):
     little_words = {"a", "on", "an", "the", "of", "and", "is", "in"}
-words = s.split()
+
+    words = s.split()
     if not words:
         return ""
 
@@ -100,40 +101,38 @@ words = s.split()
             result.append(word.capitalize())
         else:
             # Middle words → capitalize unless they are little words
-            if word in little_words:
-                result.append(word)
+            if word.lower() in little_words:
+                result.append(word.lower())
             else:
                 result.append(word.capitalize())
 
-    return " ".join(result)	
-    little_words = {"a", "on", "an", "the", "of", "and", "is", "in"}
-words = text.split()
-    if len(words) == 1:
-        return words[0].capitalize()
-
-    result = []
-    for i, word in enumerate(words):
-        # First word → always capitalize
-        if i == 0:
-            result.append(word.capitalize())
-            continue
-        if i == len(words) - 1:
-            result.append(word.capitalize())
-            continue
-10. def pig_latin(sentence):
+    return " ".join(result)
+def hangman(secret, guess)
+    for letter[0] in secret:
+        secret += "letter"
+        else
+        secret+= "__"
+        return result
+def pig_latin(sentence):
     vowels = "aeiou"
     words = sentence.split()
     result = []
+
     for word in words:
+        # Case 1: starts with a vowel
         if word[0] in vowels:
             result.append(word + "ay")
             continue
+
+        # Case 2: starts with "qu"
         if word.startswith("qu"):
             result.append(word[2:] + "quay")
             continue
+
+        # Case 3: consonant cluster
         index = 0
         while index < len(word) and word[index] not in vowels:
-# treat "qu" as one consonant inside a cluster
+            # treat "qu" as one consonant inside a cluster
             if word[index:index+2] == "qu":
                 index += 2
             else:
@@ -141,5 +140,4 @@ words = text.split()
 
         result.append(word[index:] + word[:index] + "ay")
 
-
-# Write your code here.
+    return " ".join(result)
