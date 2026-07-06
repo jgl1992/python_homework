@@ -1,4 +1,3 @@
-#what
 def hello():
     return "Hello!"
 def greet(name):
@@ -41,7 +40,7 @@ def data_type_conversion(value, data_type):
         return f"You can't convert {value} into a {data_type}."
 def grade(*args):
     try: scores = [float(x) for x in args]
-avg = sum(scores) / len(scores)
+    avg = sum(scores) / len(scores)
         if avg >= 90:
             return "A"
         elif avg >= 80:
@@ -52,23 +51,20 @@ avg = sum(scores) / len(scores)
             return "D"
         else:
             return "F"
-def student_score(position, **kwargs):
+def student_scores(position, **kwargs):
     scores = kwargs.values()
-
-    if position == "best":
-        return max(scores)
-
+    if position == 'best':
+        return max(name)
     elif position == "mean":
         return sum(scores) / len(scores)
-
     else:
         return "Invalid position requested."
 
-def repeat(string, count)
-    for (count<5, i++)
+def repeat(string, count):
+    for i in range(count):, i++)
     return(string)
 else return string*count
-def student_score(*args, **kwargs)
+def student_scores(*args, **kwargs)
 for key, value kwargs.item()
 for key, value in kwargs.items():
 score = sum(scores)
