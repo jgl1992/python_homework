@@ -40,16 +40,17 @@ def data_type_conversion(value, data_type):
         return f"You can't convert {value} into a {data_type}."
 def grade(*args):
     try: scores = [float(x) for x in args]
+    finally
     avg = sum(scores) / len(scores)
-        if avg >= 90:
+    if avg >= 90:
             return "A"
-        elif avg >= 80:
+    elif avg >= 80:
             return "B"
-        elif avg >= 70:
+    elif avg >= 70:
             return "C"
-        elif avg >= 60:
+    elif avg >= 60:
             return "D"
-        else:
+    else:
             return "F"
 def student_scores(position, **kwargs):
     scores = kwargs.values()
@@ -61,23 +62,31 @@ def student_scores(position, **kwargs):
         return "Invalid position requested."
 
 def repeat(string, count):
-    for i in range(count):, i++)
+    for i in range(count):i++)
     return(string)
-else return string*count
-def student_scores(*args, **kwargs)
-for key, value kwargs.item()
-for key, value in kwargs.items():
-score = sum(scores)
-if avg >= 90:
-return A
-elif avg >=80:
-return B
-elif avg >=70:
-return C
-elif avg >=60:
-returnD
-else
-return F 
+    else return string*count
+def student_scores(*args, **kwargs):
+    # args = scores passed positionally
+    # kwargs = named scores like math=95, english=88
+
+    scores = list(args) + list(kwargs.values())
+
+    if not scores:
+        return "No scores provided"
+
+    avg = sum(scores) / len(scores)
+
+    if avg >= 90:
+        return "A"
+    elif avg >= 80:
+        return "B"
+    elif avg >= 70:
+        return "C"
+    elif avg >= 60:
+        return "D"
+    else:
+        return "F"
+
 def titleize(s):
     little_words = {"a", "on", "an", "the", "of", "and", "is", "in"}
 words = s.split()
