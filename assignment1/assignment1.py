@@ -135,5 +135,19 @@ words = text.split()
 
         result.append(word[index:] + word[:index] + "ay")
 
+def employee_find(employee_id):
+    # Find the column index for employee_id
+    employee_id_column = column_index("employee_id")
+    if employee_id_column is None:
+        print("Could not find 'employee_id' column.")
+        return []
 
-# Write your code here.
+    # Function INSIDE a function
+    def employee_match(row):
+        return int(row[employee_id_column]) == employee_id
+
+    # Use filter() to find matching rows
+    matches = list(filter(employee_match, employees["rows"]))
+
+    return matches
+.
