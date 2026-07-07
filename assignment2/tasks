@@ -35,3 +35,12 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+TASK 3 xD :) def column_index(column_name):
+    try:
+        return employees["fields"].index(column_name)
+    except ValueError:
+        print(f"Column '{column_name}' not found in employees['fields'].")
+        return None
+
