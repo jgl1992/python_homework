@@ -31,3 +31,21 @@ except Exception as e:
     if message:
         print(f"Exception message: {message}")
     print(f"Stack trace: {stack_trace}")
+
+Task 11: Creating Your Own Module
+In the same folder, create a file called custom_module.py, with the following contents:
+secret = "shazam!"
+
+def set_secret(new_secret):
+   global secret
+   secret = new_secret
+Add the line import custom_module to assignment2.py.
+def set(secret, customer)
+    
+Create a function called set_that_secret.  It should accept one parameter, which is the new secret to be set.  It should call custom_module.set_secret(), passing the parameter, so as to set the secret in custom_module.
+
+Add a line to your program to call set_that_secret, passing the new string of your choice.
+
+In another line, print out custom_module.secret.  Verify that it has the value you expect.
+
+Run the test until the next part passes

@@ -120,7 +120,7 @@ def pig_latin(sentence):
 
     for word in words:
         # Case 1: starts with a vowel
-        if word[0] in vowels:
+        if word[0] in vowels:3
             result.append(word + "ay")
             continue
 
