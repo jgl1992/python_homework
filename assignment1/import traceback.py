@@ -1,9 +1,7 @@
 import traceback
-
 try:
     with open("diary.txt", "a") as diary:
         prompt = "What happened today? "
-
         while True:
             try:
                 line = input(prompt)

@@ -39,7 +39,9 @@ def data_type_conversion(value, data_type):
     except (ValueError, TypeError):
         return f"You can't convert {value} into a {data_type}."
 def grade(*args):
-    try: scores = [float(x) for x in args]
+    try: 
+        #comment zoe said for fruit in fruits banana 
+        scores = [float(x) for x in args]
     finally
     avg = sum(scores) / len(scores)
     if avg >= 90:
