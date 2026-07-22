@@ -1,0 +1,132 @@
+mport logging
+logger = logging.getLogger(__name__ + "_parameter_log")
+logger.setLevel(logging.INFO)
+logger.addHandler(logging.FileHandler("./decorator.log","a"))
+def logger_decorator(func):
+    def wr(*args, **kwargs):
+        function_name = (func.__name__)
+        positional_parameters = list(args) if args else 'none'
+        keyword_parameters = dict(kwargs) if kwargs else 'none'
+        result = func(*args, **kwargs)
+        log_message = (
+            f'function: {function_name}\n'
+            f'positional parameters: {positional_parameters}\n'
+            f'keyword parameters: {keyword_parameters}\n'
+            f"return: {result}\n"
+            "-----------------------------"
+        )
+        logger.log(logging.INFO, log_message)
+        return result
+    return wr
+@logger_decorator
+def func_hello():
+    print("Hello, World!")
+@logger_decorator
+def func_args_true(*args):
+    return True
+@logger_decorator
+def func_kwargs_dec(**kwargs):
+    return logger_decorator
+if __name__ == "__main__":
+    func_hello()
+    func_args_true(1, 2, 3, 'test', True)
+    func_kwargs_dec(a=1, b=2, user='Bob')
+    print("test is done, check ./decorator.log")
+class TictactoeException(Exception):
+    def __init__(self, message):
+        self.message = message
+        super().__init__(message)
+from functools import def uppercase decorator def wrapper result = return str return wrapper def reutrn -int return 5
+Return string
+Not a number
+Y = return int
+Print*type(y))_name_
+Y = retrunt string
+Print(shouldn’t get here)
+except value error
+Print(can’t convert)
+class Board:
+    valid_moves = [
+        "upper left", "upper center", "upper right",
+        "middle left", "center", "middle right",
+        "lower left", "lower center", "lower right"
+    ]
+
+    def __init__(self):
+        # 3x3 board of spaces
+        self.board_array = [[" " for _ in range(3)] for _ in range(3)]
+        self.turn = "X"
+        self.last_move = None
+
+    def __str__(self):
+        # Build a printable board
+        rows = []
+        for row in self.board_array:
+            rows.append(" | ".join(row))
+        return "\n---------\n".join(rows)
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+    def __str__(self):
+        return f"Point {self.x}, {self.y}"
+    def __eq__(self, other):
+        return self.x == other.x and self.y == other.y
+    def distance(self, other):
+        return ((self.x - other.x)**2 + (self.y - other.y)**2) **0.5
+class Vector(Point):
+    def __str__(self):
+        return f"Vector({self.x}, {self.y})"
+    def __add__(self, other):
+        return Vector(self.x + other.x, self.y + other.y)
+v1 = Vector(1, 2)
+v2 = Vector(3, 4)
+v3 = v1 + v2
+print(v3) # Vector(4, 6)
+print(v3.distance(v1)) # Inherited from Point!
+    class point
+    def__str__(point)
+    def __init()
+    class vector
+      __ def init _ _
+      sum(x+y)
+def move(self, move_string):
+    if move_string not in Board.valid_moves:
+        raise TictactoeException("That's not a valid move.")
+    index = Board.valid_moves.index(move_string)
+    row = index // 3
+    col = index % 3
+    if self.board_array[row][col] != " ":
+        raise TictactoeException("That spot is taken.")
+    self.board_array[row][col] = self.turn
+    self.last_move = (row, col)
+
+    # Switch turn
+    self.turn = "O" if self.turn == "X" else "X"
+
+
+
+def whats_next(self):
+    board = self.board_array
+    for row in board:
+        if row[0] == row[1] == row[2] != " ":
+            return (True, f"{row[0]} has won")
+
+    # Check columns
+    for col in range(3):
+        if board[0][col] == board[1][col] == board[2][col] != " ":
+            return (True, f"{board[0][col]} has won")
+
+    # Check diagonals
+    if board[0][0] == board[1][1] == board[2][2] != " ":
+        return (True, f"{board[0][0]} has won")
+
+    if board[0][2] == board[1][1] == board[2][0] != " ":
+        return (True, f"{board[0][2]} has won")
+
+    # Check for cat's game (board full)
+    full = all(board[r][c] != " " for r in range(3) for c in range(3))
+    if full:
+        return (True, "Cat's Game")
+
+    # Otherwise game continues
+    return (False, f"{self.turn}'s turn")
