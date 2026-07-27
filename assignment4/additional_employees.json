@@ -1,0 +1,4 @@
+import pandas as pd
+
+json_employees = pd.read_json('additional_employees.json')
+print(json_employees)
