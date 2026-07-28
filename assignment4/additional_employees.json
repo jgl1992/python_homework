@@ -1,4 +1,15 @@
-import pandas as pd
+json
+{
+    {
+        "name": "Eve",
+        "age": 28,
+        "city": "Miami",
+        "salary":[]
+    }
+{
+    "name": "Frank",
+    "age": 40,
+    "city": "Seattle",
+    "salary": 95,000
 
-json_employees = pd.read_json('additional_employees.json')
-print(json_employees)
+}

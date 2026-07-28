@@ -11,7 +11,7 @@ print()
 task1_with_salary = task1_data_frame.copy()
 task1_with_salary["Salary"] = [70000, 80000, 90000]
 print("Task 1 - DataFrame with Salary:")
-print(task1_with_salary)
+print(taask1_with_salary)
 print()
 task1_older = task1_with_salary.copy()
 task1_older["Age"] = task1_older["Age"] + 1
