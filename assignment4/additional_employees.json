@@ -1,15 +1,14 @@
-json
-{
+[
     {
         "name": "Eve",
         "age": 28,
         "city": "Miami",
-        "salary":[]
+        "salary": []
+    },
+    {
+        "name": "Frank",
+        "age": 40,
+        "city": "Seattle",
+        "salary": 95000
     }
-{
-    "name": "Frank",
-    "age": 40,
-    "city": "Seattle",
-    "salary": 95,000
-
-}
+]
